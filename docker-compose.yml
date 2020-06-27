@@ -1,23 +1,17 @@
-version: "2"
+version: "3"
 services:
   application1:
     image: alpha-java-task3
-    expose:
-    - "8080"
     ports:
-    - "8080:8080"
-#    depends_on:
-#      - postgresql
-#  postgresql:
-#    restart: always
-#    image: postgres:11
-#    container_name: postgresql
-#    hostname: postgresql
-#    ports:
-#    - 5432:5432
-#    environment:
-#    - POSTGRES_USER=user
-#    - POSTGRES_PASSWORD=user
-#    - POSTGRES_DB=test
-#    networks:
-#    - boomq_network
+    - "8082:8082"
+    depends_on:
+      - alfa-battle-task3
+
+  alfa-battle-task3:
+    image: postgres
+    environment:
+      POSTGRES_DB: alfa_battle
+      POSTGRES_USER: alfa_battle
+      POSTGRES_PASSWORD: qwe123
+    ports:
+    - 5432:5432
