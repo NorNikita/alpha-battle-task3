@@ -5,17 +5,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class DistBranchDto {
+public class MetricaDto implements Comparable<MetricaDto> {
 
     private Long id;
-    private String address;
-    private Double lat;
-    private Double lon;
-    private String title;
     private Long distance;
+
+    @Override
+    public int compareTo(MetricaDto o) {
+        return this.distance.compareTo(o.getDistance());
+    }
 }

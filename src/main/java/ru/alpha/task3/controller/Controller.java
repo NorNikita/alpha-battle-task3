@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.alpha.task3.model.dto.BranchDto;
-import ru.alpha.task3.model.dto.DistBranchDto;
 import ru.alpha.task3.service.IBankService;
 
 @RestController
@@ -22,8 +21,8 @@ public class Controller {
     }
 
     @GetMapping("/branches")
-    public ResponseEntity<DistBranchDto> getNearBranch(@RequestParam Double lat,
+    public ResponseEntity<BranchDto> getNearBranch(@RequestParam Double lat,
                                                        @RequestParam Double lon) {
-        return ResponseEntity.ok(bankService.findNearParam(lat, lon));
+        return ResponseEntity.ok(bankService.findNearestBranch(lat, lon));
     }
 }

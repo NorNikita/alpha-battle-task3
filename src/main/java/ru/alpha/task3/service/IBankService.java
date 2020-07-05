@@ -1,10 +1,12 @@
 package ru.alpha.task3.service;
 
 import ru.alpha.task3.model.dto.BranchDto;
-import ru.alpha.task3.model.dto.DistBranchDto;
 
 public interface IBankService {
+
+    double Radius = 6_371_000;
+
     BranchDto findBranchesById(Long id);
 
-    DistBranchDto findNearParam(Double lat, Double lon);
+    BranchDto findNearestBranch(Double lat, Double lon);
 }
