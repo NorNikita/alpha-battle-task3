@@ -1,4 +1,4 @@
-package ru.alpha.task3.model;
+package ru.alpha.task3.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

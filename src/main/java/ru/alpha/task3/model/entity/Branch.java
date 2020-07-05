@@ -1,4 +1,4 @@
-package ru.alpha.task3.model;
+package ru.alpha.task3.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Bank {
+public class Branch {
 
     @Id
     @Column(name = "id")

@@ -1,16 +1,17 @@
-package ru.alpha.task3.service;
+package ru.alpha.task3.service.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.alpha.task3.model.Bank;
-import ru.alpha.task3.model.BranchDto;
-import ru.alpha.task3.model.DistBranchDto;
+import ru.alpha.task3.model.entity.Branch;
+import ru.alpha.task3.model.dto.BranchDto;
+import ru.alpha.task3.model.dto.DistBranchDto;
+import ru.alpha.task3.model.exception.AlphaTaskException;
+import ru.alpha.task3.model.exception.ExceptionMessage;
 import ru.alpha.task3.repository.BankRepo;
-
-import java.util.Optional;
+import ru.alpha.task3.service.IBankService;
 
 @Service
 @AllArgsConstructor
@@ -20,7 +21,7 @@ public class BankService implements IBankService {
 
     @Override
     public BranchDto findBranchesById(Long id) {
-        Bank bank = bankRepo.findById(id).orElseThrow(() -> new NullPointerException());
+        Branch bank = bankRepo.findById(id).orElseThrow(() -> new AlphaTaskException(ExceptionMessage.BRANCH_NOT_FOUND));
 
         return BranchDto.builder()
                 .id(bank.getId())
@@ -52,7 +53,7 @@ public class BankService implements IBankService {
                 .findFirst()
                 .orElseThrow(() -> new NullPointerException());
 
-        Bank bank = bankRepo.findById(first.getId()).orElseThrow(() -> new NullPointerException());
+        Branch bank = bankRepo.findById(first.getId()).orElseThrow(() -> new NullPointerException());
 
         return DistBranchDto.builder()
                 .id(bank.getId())

@@ -1,7 +1,7 @@
 package ru.alpha.task3.service;
 
-import ru.alpha.task3.model.BranchDto;
-import ru.alpha.task3.model.DistBranchDto;
+import ru.alpha.task3.model.dto.BranchDto;
+import ru.alpha.task3.model.dto.DistBranchDto;
 
 public interface IBankService {
     BranchDto findBranchesById(Long id);

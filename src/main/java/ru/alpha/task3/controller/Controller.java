@@ -2,13 +2,12 @@ package ru.alpha.task3.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.alpha.task3.model.BranchDto;
-import ru.alpha.task3.model.DistBranchDto;
+import ru.alpha.task3.model.dto.BranchDto;
+import ru.alpha.task3.model.dto.DistBranchDto;
 import ru.alpha.task3.service.IBankService;
 
 @RestController
