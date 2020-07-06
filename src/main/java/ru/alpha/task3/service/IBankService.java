@@ -9,4 +9,6 @@ public interface IBankService {
     BranchDto findBranchesById(Long id);
 
     BranchDto findNearestBranch(Double lat, Double lon);
+
+    BranchDto predictWaiting(Long id, Long dayOfWeek, Long hourOfDay);
 }

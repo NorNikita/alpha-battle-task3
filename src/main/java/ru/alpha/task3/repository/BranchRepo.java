@@ -7,7 +7,7 @@ import ru.alpha.task3.model.entity.Branch;
 import java.util.Optional;
 
 @Repository
-public interface BankRepo extends JpaRepository<Branch, Long> {
+public interface BranchRepo extends JpaRepository<Branch, Long> {
 
     Optional<Branch> findById(Long id);
 }

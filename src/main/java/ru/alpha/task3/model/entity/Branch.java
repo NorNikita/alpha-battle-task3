@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "branches")
@@ -24,4 +26,12 @@ public class Branch {
     private Double lat;
     private Double lon;
     private String title;
+
+    @OneToMany(
+            mappedBy = "branch",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.DETACH,
+            orphanRemoval = true
+    )
+    private List<QueueLog> queueLogs = new ArrayList<>();
 }
