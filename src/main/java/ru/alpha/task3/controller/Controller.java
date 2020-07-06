@@ -24,7 +24,7 @@ public class Controller {
         return ResponseEntity.ok(bankService.findNearestBranch(lat, lon));
     }
 
-    @GetMapping("/{id}/predict") //?dayOfWeek=int&hourOfDay=int
+    @GetMapping("/{id}/predict")
     public ResponseEntity<BranchDto> getPredict(@PathVariable Long id,
                                                 @RequestParam Long dayOfWeek,
                                                 @RequestParam Long hourOfDay) {
